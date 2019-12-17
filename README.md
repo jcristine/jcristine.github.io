@@ -1,3 +1,3 @@
 # jcristine.github.io
 
-# HowTo: https://pages.github.com/
+HowTo: https://pages.github.com/
