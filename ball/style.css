@@ -1,11 +1,25 @@
-html, body {
-  height: 100%;
-}
-
 body {
   margin: 0;
-  display: flex;
+
   justify-content: center;
   align-items: center;
   background: #0e0e0e;
+}
+
+img {
+  margin: 10px;
+  padding: 10px;
+  border: 0px;
+}
+
+.page-center-all {
+     margin: 0 auto;
+     width: 50%;
+}
+
+.wrapper {
+    display: grid;
+    grid-gap: 5px;
+    grid-row-gap: 5px;
+    grid-template-columns: 160px 160px 160px 160px;
 }
