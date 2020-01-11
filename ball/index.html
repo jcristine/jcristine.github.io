@@ -1,46 +1,45 @@
+
+<!DOCTYPE html>
+<!-- https://stackoverflow.com/questions/37810012/how-we-can-save-a-html-page-after-drag-and-drop-changes/37828086 -->
+<!-- https://jsfiddle.net/f7fq7n94/ -->
 <html>
   <head>
-    <title>Ball - 1.05</title>
-    <link href="style.css" rel="stylesheet" type="text/css">
+    <title>Ball 2.03</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="jquery-2.0.2.js"></script>
+    <script type="text/javascript" src="jquery-ui.js"></script>
+    <script type="text/javascript" src="drag.js"></script>
+    <link rel="stylesheet" type="text/css" href="jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="drag.css">
   </head>
+
   <body>
-    <div class="page-center-all">
-      <section class="wrapper">
-        <img src="img/sit-up.gif">
-        <img src="img/back-ball-exercise.gif">
-        <img src="img/jacknife.gif">
-        <img src="img/arm-leg-extension-alternating.gif">
-      </section>
-      <section class="wrapper">
-        <img src="img/dumbbell-press.gif">
-        <img src="img/rear-deltoid-row.gif">
-        <img src="img/chest-fly.gif">
-        <img src="img/side-crunch.gif">
-      </section>
-      <section class="wrapper">
-        <img src="img/calf-raise-one-legged.gif">
-        <img src="img/reverse-leg-curl.gif">
-        <img src="img/crunch-legs-elevated.gif">
-        <img src="img/hip-adduction.gif">
-      </section>
-      <section class="wrapper">
-        <img src="img/squat-one-legged.gif">
-        <img src="img/hyperextension-reverse.gif">
-        <img src="img/squat-wall-weighted.gif">
-        <img src="img/rear-deltoid-raise-lying-sideways.gif">
-      </section>
-      <section class="wrapper">
-        <img src="img/toe-raise.gif">
-        <img src="img/reverse-crunch.gif">
-        <img src="img/shoulder-rotation.gif">
-        <img src="img/biceps-curl-standing.gif">
-      </section>
-      <section class="wrapper">
-        <img src="img/triceps-extension-weighted.gif">
-        <img src="img/biceps-curl-knees.gif">
-        <img src="img/reverse-bridge.gif">
-        <img src="img/triceps-extension.gif">
-      </section>
-    <div>
+    <div id="containment-wrapper">
+      <div id="draggable01" class="draggable ui-widget-content"><img src="img/arm-leg-extension-alternating.gif"></div>
+      <div id="draggable02" class="draggable ui-widget-content"><img src="img/back-ball-exercise.gif"></div>
+      <div id="draggable03" class="draggable ui-widget-content"><img src="img/biceps-curl-knees.gif"></div>
+      <div id="draggable04" class="draggable ui-widget-content"><img src="img/biceps-curl-standing.gif"></div>
+      <div id="draggable05" class="draggable ui-widget-content"><img src="img/calf-raise-one-legged.gif"></div>
+      <div id="draggable06" class="draggable ui-widget-content"><img src="img/chest-fly.gif"></div>
+      <div id="draggable07" class="draggable ui-widget-content"><img src="img/crunch-legs-elevated.gif"></div>
+      <div id="draggable08" class="draggable ui-widget-content"><img src="img/dumbbell-press.gif"></div>
+      <div id="draggable09" class="draggable ui-widget-content"><img src="img/hip-adduction.gif"></div>
+      <div id="draggable10" class="draggable ui-widget-content"><img src="img/hyperextension-reverse.gif"></div>
+      <div id="draggable11" class="draggable ui-widget-content"><img src="img/jacknife.gif"></div>
+      <div id="draggable12" class="draggable ui-widget-content"><img src="img/rear-deltoid-raise-lying-sideways.gif"></div>
+      <div id="draggable13" class="draggable ui-widget-content"><img src="img/rear-deltoid-row.gif"></div>
+      <div id="draggable14" class="draggable ui-widget-content"><img src="img/reverse-bridge.gif"></div>
+      <div id="draggable15" class="draggable ui-widget-content"><img src="img/reverse-crunch.gif"></div>
+      <div id="draggable16" class="draggable ui-widget-content"><img src="img/reverse-leg-curl.gif"></div>
+      <div id="draggable17" class="draggable ui-widget-content"><img src="img/shoulder-rotation.gif"></div>
+      <div id="draggable18" class="draggable ui-widget-content"><img src="img/side-crunch.gif"></div>
+      <div id="draggable19" class="draggable ui-widget-content"><img src="img/sit-up.gif"></div>
+      <div id="draggable20" class="draggable ui-widget-content"><img src="img/squat-one-legged.gif"></div>
+      <div id="draggable21" class="draggable ui-widget-content"><img src="img/squat-wall-weighted.gif"></div>
+      <div id="draggable22" class="draggable ui-widget-content"><img src="img/toe-raise.gif"></div>
+      <div id="draggable23" class="draggable ui-widget-content"><img src="img/triceps-extension-weighted.gif"></div>
+      <div id="draggable24" class="draggable ui-widget-content"><img src="img/triceps-extension.gif"></div>
+    </div>
   </body>
 </html>

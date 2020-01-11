@@ -1,0 +1,25 @@
+body {
+  background: #fff;
+}
+.draggable {
+  width:  150px;
+  height: 150px;
+  padding: 0.5em;
+  float: left;
+  margin: 0 10px 10px 0;
+}
+#draggable, #draggable2 {
+    margin-bottom:20px;
+}
+#draggable {
+    cursor: n-resize;
+}
+#draggable3 {
+    cursor: move;
+}
+#containment-wrapper {
+    width:  1400px;
+    height: 1400px;
+    border: 0px solid #000;
+    padding: 5px;
+}
