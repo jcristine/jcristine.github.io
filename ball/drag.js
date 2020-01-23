@@ -222,4 +222,13 @@ $(window).load(function(){
       }
   });
 
+  $("#draggable25").draggable({
+      containment: "#containment-wrapper",
+      scroll: false,
+      stop: function (event, ui) {
+          positions[this.id] = ui.position
+          localStorage.positions = JSON.stringify(positions)
+      }
+  });
+
 });
