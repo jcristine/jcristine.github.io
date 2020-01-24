@@ -1,6 +1,7 @@
 body {
   background: #fff;
 }
+
 .draggable {
   width:  150px;
   height: 150px;
@@ -8,15 +9,24 @@ body {
   float: left;
   margin: 0 0 0 0;
 }
+
+.img {
+  width:  150px;
+  height: 150px;  
+}
+
 #draggable, #draggable2 {
     margin-bottom:20px;
 }
+
 #draggable {
     cursor: n-resize;
 }
+
 #draggable3 {
     cursor: move;
 }
+
 #containment-wrapper {
     width:  1400px;
     height: 1400px;
