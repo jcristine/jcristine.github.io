@@ -10,9 +10,9 @@ body {
   margin: 0 0 0 0;
 }
 
-.img {
+img {
   width:  150px;
-  height: 150px;  
+  height: 150px;
 }
 
 #draggable, #draggable2 {
