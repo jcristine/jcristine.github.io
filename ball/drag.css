@@ -4,9 +4,9 @@ body {
 .draggable {
   width:  150px;
   height: 150px;
-  padding: 0.5em;
+  padding: 0;
   float: left;
-  margin: 0 10px 10px 0;
+  margin: 0 0 0 0;
 }
 #draggable, #draggable2 {
     margin-bottom:20px;
