@@ -231,4 +231,85 @@ $(window).load(function(){
       }
   });
 
+  $("#draggable26").draggable({
+      containment: "#containment-wrapper",
+      scroll: false,
+      stop: function (event, ui) {
+          positions[this.id] = ui.position
+          localStorage.positions = JSON.stringify(positions)
+      }
+  });
+
+  $("#draggable27").draggable({
+      containment: "#containment-wrapper",
+      scroll: false,
+      stop: function (event, ui) {
+          positions[this.id] = ui.position
+          localStorage.positions = JSON.stringify(positions)
+      }
+  });
+
+  $("#draggable28").draggable({
+      containment: "#containment-wrapper",
+      scroll: false,
+      stop: function (event, ui) {
+          positions[this.id] = ui.position
+          localStorage.positions = JSON.stringify(positions)
+      }
+  });
+
+  $("#draggable29").draggable({
+      containment: "#containment-wrapper",
+      scroll: false,
+      stop: function (event, ui) {
+          positions[this.id] = ui.position
+          localStorage.positions = JSON.stringify(positions)
+      }
+  });
+
+  $("#draggable30").draggable({
+      containment: "#containment-wrapper",
+      scroll: false,
+      stop: function (event, ui) {
+          positions[this.id] = ui.position
+          localStorage.positions = JSON.stringify(positions)
+      }
+  });
+
+  $("#draggable31").draggable({
+      containment: "#containment-wrapper",
+      scroll: false,
+      stop: function (event, ui) {
+          positions[this.id] = ui.position
+          localStorage.positions = JSON.stringify(positions)
+      }
+  });
+
+  $("#draggable32").draggable({
+      containment: "#containment-wrapper",
+      scroll: false,
+      stop: function (event, ui) {
+          positions[this.id] = ui.position
+          localStorage.positions = JSON.stringify(positions)
+      }
+  });
+
+  $("#draggable33").draggable({
+      containment: "#containment-wrapper",
+      scroll: false,
+      stop: function (event, ui) {
+          positions[this.id] = ui.position
+          localStorage.positions = JSON.stringify(positions)
+      }
+  });
+
+  $("#draggable34").draggable({
+      containment: "#containment-wrapper",
+      scroll: false,
+      stop: function (event, ui) {
+          positions[this.id] = ui.position
+          localStorage.positions = JSON.stringify(positions)
+      }
+  });
+
 });
