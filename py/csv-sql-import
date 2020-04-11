@@ -1,0 +1,73 @@
+#!/usr/bin/env python3
+
+"""
+  FIPS,Admin2,Province_State,Country_Region,Last_Update,Lat,Long_,Confirmed,Deaths,Recovered,Active,Combined_Key
+  45001,Abbeville,South Carolina,US,2020-04-09 23:02:37,34.22333378,-82.46170658,7,0,0,0,"Abbeville, South Carolina, US"
+
+  CREATE TABLE jhu (
+    FIPS int,
+    Admin2 varchar(50),
+    Province_State varchar(50),
+    Country_Region varchar(50),
+    Last_Update datetime,
+    Lat decimal(18,8),
+    Long_ decimal(18, 8),
+    Confirmed int,
+    Deaths int,
+    Recovered int,
+    Active int,
+    Combined_Key varchar(100)
+  );
+
+"""
+
+import pyodbc
+import csv
+import sys
+
+con = pyodbc.connect(
+    "Driver={ODBC Driver 17 for SQL Server};"
+    "Server=debian;"
+    "Database=db0;"
+    "uid=cristine;"
+    "pwd=gci02K5J8P")
+
+def method1():
+    print("Running Example method1()")
+    with open ('04-09-2020.csv', 'r') as f:
+        reader = csv.reader(f)
+        columns = next(reader) 
+        SQL = 'insert into jhu({0}) values ({1})'
+        SQL = SQL.format(','.join(columns), ','.join('?' * len(columns)))
+        cursor = con.cursor()
+        for row in reader:
+            cursor.execute(SQL, row)
+            cursor.commit()
+        con.close()
+
+def method2():
+    print("Running Example method2()")
+    cursor = con.cursor()
+    with open ('04-09-2020.csv', 'r') as f:
+        reader = csv.reader(f)
+        next(reader) # skip header line
+        SQL = "INSERT INTO jhu (FIPS, Admin2, Province_State, Country_Region, Last_Update, Lat, Long_, Confirmed, Deaths, Recovered, Active, Combined_Key) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+        for row in reader:
+            cursor.execute(SQL, row)
+            con.commit()
+        con.close()
+
+if __name__ == "__main__":
+    if len(sys.argv) == 1:
+        print(f"Usage: csv-sql-import [method1 | method2]")
+        exit()
+
+    if sys.argv[1] == "method1":
+        method1()
+        exit()
+
+    if sys.argv[1] == "method2":
+        method2()
+        exit()
+
+    print(f"Usage: csv-sql-import [method1 | method2]")
