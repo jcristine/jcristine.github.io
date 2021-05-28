@@ -1,5 +1,5 @@
 var rainbowEnable = false;
-var connection = new WebSocket('ws://10.0.0.18:81/', ['arduino']);
+var connection = new WebSocket('ws://10.0.0.20:81/', ['arduino']);
 
 document.onkeydown = checkKey;
 
