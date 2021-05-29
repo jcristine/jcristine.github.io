@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-rm index.html && ./makeindex && git add . -v && git commit -m "na" -v && git push -v
+./makeindex && git add . -v && git commit -m "na" -v && git push -v
