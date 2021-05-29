@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import requests, re
+import requests, re, datetime
 
 rs = requests.get("https://g1.ipcamlive.com/player/player.php?alias=603d26c2977cf").content.decode()
 
@@ -13,6 +13,6 @@ with open("template-index.html") as f:
     template = f.read()
 
 print(
-    template.replace("{{videoSrc}}", url),
+    template.replace("{{videoSrc}}", url).replace("{{date}}", datetime.datetime.now().strftime("%Y-%m-%d %I:%M:%S %p")),
      file = open("index.html", "w")
 )
