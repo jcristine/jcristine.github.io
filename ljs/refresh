@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+./makeindex && git add . -v && git commit -m "na" -v && git push -v
