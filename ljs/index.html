@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>La Jolla Shores</title>
+    </head>
+    <body style="background-color:#000000;">
+
+        <center>
+            <video style="outline: none;" height="400" id="video" controls muted autoplay></video>
+        </center>
+
+        <script src="hls.js"></script> <!-- https://github.com/video-dev/hls.js -->
+        <video id="video"></video>
+        <script>
+            var video = document.getElementById('video');
+            var videoSrc = 'https://s57.ipcamlive.com/streams/39nxoqngkbmzb9ijr/stream.m3u8';
+            if (Hls.isSupported()) {
+                var hls = new Hls();
+                hls.loadSource(videoSrc);
+                hls.attachMedia(video);
+            }
+            else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                video.src = videoSrc;
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+    <head>
+        <title>Live video stream</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">		  
+        <link rel="shortcut icon" href="../tpls2/img/ipcamlive_favicon_128.png">
+
+        <script type="text/javascript" src="jquery-3.min.js"> </script>
+		<script type="text/javascript" src="ipcamliveplayer.min.js?version=3"> </script>
+			
+		<script type="text/javascript">
+			function inIframe () {
+    			try {
+        			return window.self !== window.top;
+    			} catch (e) {
+        			return true;
+    			}
+			}
+
+			var serverhost = 'http://g1.ipcamlive.com/';
+
+			var alias = '603d26c2977cf';
+			var servicetype = 'P';
+			var available = 1;
+			var address = 'http://s57.ipcamlive.com/';
+			var streamid = '39nxoqngkbmzb9ijr';
+			var token = '1f0abd61';
+
+			var logoenabled = 0;
+			var logofilename = 'ipcamlive.png';
+			var logopos = 'BL';
+
+			var domainlockenabled  = 0;
+
+			var websocketenabled = 0;
+			var websocketport = '6003';
+
+			var rtcsupport = 1;
+
+			ipcamliveHostManager.setHostURL(serverhost);
+									
+			$(window).on("load", function() {	
+				if (domainlockenabled) {
+					if (!inIframe()) {
+						return;
+					}
+				}
+
+				var width = $(window).width();
+				var height = $(window).height(); 
+				$('#mediaplaybackdiv').width(width).height(height);
+				// console.log("LOAD: " + width + "x" + height);
+
+				var params = {};
+				params["iframemode"] = 1;
+				params["autoplay"] = 0;
+				params["audioenabled"] = 0;
+				params["timelapseenabledoncamera"] = 0;
+				params["timelapseplayerenabled"] = 1;
+				params["disableframecapture"] = 0;
+				params["disabledownloadbutton"] = 0;		
+				params["disablereportbutton"] = 0;		
+				params["timeshiftenabled"] = 0;				
+				params["skin"] = '';		
+		    	 
+				if (logoenabled) {
+					params["logo"] = ipcamliveHostManager.getHostURL('resources/logos/' + logofilename);
+					params["logopos"] = ipcamlivehelper.getPosByID(logopos);				
+				}
+	
+				if (websocketenabled)
+					params["websocketenabled"] = 1;	
+
+				if (rtcsupport)
+					params["rtcsupport"] = 1;	
+
+				ipcamliveplayer.setToken(token);
+				if (available) {
+					ipcamliveplayer.embedOnline("mediaplaybackdiv", alias, streamid, servicetype, address, websocketport, params);
+				} else {
+					ipcamliveplayer.embed("mediaplaybackdiv", alias, params);
+				}				
+			});	
+
+			$(window).resize(function() {
+				var width = $(window).width();
+				var height = $(window).height(); 
+				
+				$('#mediaplaybackdiv').width(width).height(height);
+				ipcamliveplayer.resize();
+			});
+					
+			var safariMobile = is.safari() && (is.iphone() || is.ipod() || is.ipad());
+			if (safariMobile) {					
+				window.addEventListener('orientationchange', function() {
+					$('#mediaplaybackdiv').width(320).height(240);
+					window.setTimeout(function() {
+						var width = $(window).width();
+						var height = $(window).height(); 
+				
+						$('#mediaplaybackdiv').width(width).height(height);
+						ipcamliveplayer.resize();
+					}, 300);
+				});
+			}
+        </script>
+    </head>
+    <body style="margin: 0px; border: 0px; padding: 0px; overflow: hidden"> 
+		<div id="mediaplaybackdiv">
+		</div>
+    </body>
+</html>
+
