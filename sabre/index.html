@@ -29,9 +29,10 @@
 
                 console.log(data.groupedItineraryResponse.messages.length);
 
-                var div = document.createElement("div");
+                
 
                 data.groupedItineraryResponse.messages.forEach(element => {
+                    var div = document.createElement("div");
                     div.innerHTML =  element.type + ': ' + element.text;
                     mainContainer.appendChild(div);
                 });
