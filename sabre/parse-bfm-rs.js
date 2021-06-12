@@ -15,6 +15,8 @@ function render() {
         });
 }
 
+// cp -v ~/usb2tb/html/sabre/* . && git add . -v && git commit -m "na" -v && git push -v
+
 function appendData(data) {
 
     var sabre = document.getElementById("sabre");
