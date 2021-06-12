@@ -10,7 +10,7 @@
         <pre>
             <div id="myData"></div>
         </pre>
-        
+
         <script>
 
             fetch('bfm.json')
@@ -29,11 +29,18 @@
 
                 console.log(data.groupedItineraryResponse.messages.length);
 
-                for (var i = 0; i < data.groupedItineraryResponse.messages.length; i++) {
-                    var div = document.createElement("div");
-                    div.innerHTML =  data.groupedItineraryResponse.messages[i].type + ': ' + data.groupedItineraryResponse.messages[i].text;
+                var div = document.createElement("div");
+
+                data.groupedItineraryResponse.messages.forEach(element => {
+                    div.innerHTML =  element.type + ': ' + element.text;
                     mainContainer.appendChild(div);
-                }
+                });
+
+                //for (var i = 0; i < data.groupedItineraryResponse.messages.length; i++) {
+                //    var div = document.createElement("div");
+                //    div.innerHTML =  data.groupedItineraryResponse.messages[i].type + ': ' + data.groupedItineraryResponse.messages[i].text;
+                //    mainContainer.appendChild(div);
+                //}
             }
 
         </script>
