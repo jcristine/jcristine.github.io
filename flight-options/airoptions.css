@@ -1,0 +1,31 @@
+#maincontainer {
+    text-align: center;
+}
+
+#sabre, #flyline
+{
+    display: inline-block;
+    border: none;
+    width: 200px;
+    vertical-align: top;
+}
+
+.fare {
+    margin: 3px;
+    padding: 0px;
+    border: 2px;
+    border-style: solid;
+    border-color: black;
+    background-color: white;
+    text-align: left;
+    font-family: monospace;
+}
+
+.fare-header {
+    margin: 3px;
+    padding: 0px;
+    border: none;
+    background-color: white;
+    text-align: center;
+    font-family: monospace;
+}
