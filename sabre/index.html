@@ -1,93 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <title>Parse BFM - 0.01</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>JSON Test</title>
+        <script src="parse-bfm-rs.js"></script>
     </head>
-    <body>
+    <body onload="render()">
         <pre>
             <div id="myData"></div>
         </pre>
-
-        <script>
-
-            fetch('bfm.json')
-
-                .then(function (response) {
-                    return response.json();
-                })
-
-                .then(function (data) {
-                    appendData(data);
-                })
-
-                .catch(function (err) {
-                    console.log('error: ' + err);
-                });
-
-            function appendData(data) {
-                var mainContainer = document.getElementById("myData");
-
-                //console.log(data.groupedItineraryResponse.messages.length);
-
-                // https://www.w3schools.com/jsref/jsref_foreach.asp
-                // data.groupedItineraryResponse.messages.forEach(element => {
-                //     var div = document.createElement("div");
-                //     div.innerHTML =  element.type + ': ' + element.text;
-                //     mainContainer.appendChild(div);
-                // });
-
-                // data.groupedItineraryResponse.itineraryGroups.forEach(element => {
-                //     var div = document.createElement("div");
-                //     div.innerHTML =  element.groupDescription.legDescriptions[0].departureLocation + '-' + element.groupDescription.legDescriptions[0].arrivalLocation;
-                //     mainContainer.appendChild(div);
-                // });
-
-                data.groupedItineraryResponse.itineraryGroups.forEach(group => {
-
-                    group.itineraries.forEach(itinerary => {
-                        //var div = document.createElement("div");
-                        //div.innerHTML =  item.id;
-                        //mainContainer.appendChild(div);
-
-                        itinerary.legs.forEach(leg => {
-                            //var div = document.createElement("div");
-                            //div.innerHTML = data.groupedItineraryResponse.legDescs[leg.ref].schedules[0].ref;
-                            //mainContainer.appendChild(div);
-
-                            data.groupedItineraryResponse.legDescs[leg.ref - 1].schedules.forEach(schedule => {
-
-                                var div = document.createElement("div");
-
-                                div.innerHTML = 
-                                    data.groupedItineraryResponse.scheduleDescs[schedule.ref - 1].departure.airport + '-' +
-                                    data.groupedItineraryResponse.scheduleDescs[schedule.ref - 1].arrival.airport + ' ' +
-                                    data.groupedItineraryResponse.scheduleDescs[schedule.ref - 1].carrier.operating + ' ' +
-                                    data.groupedItineraryResponse.scheduleDescs[schedule.ref - 1].carrier.operatingFlightNumber;
-
-                                mainContainer.appendChild(div);
-                                
-                            });
-
-                        });
-
-                        var div = document.createElement("div");
-                        div.innerHTML = '\n';
-                        mainContainer.appendChild(div);
-
-                    });
-
-                });
-
-                //for (var i = 0; i < data.groupedItineraryResponse.messages.length; i++) {
-                //    var div = document.createElement("div");
-                //    div.innerHTML =  data.groupedItineraryResponse.messages[i].type + ': ' + data.groupedItineraryResponse.messages[i].text;
-                //    mainContainer.appendChild(div);
-                //}
-            }
-
-        </script>
     </body>
 </html>
