@@ -1,15 +1,5 @@
 #maincontainer {
-    text-align:center;
-}
-
-#block_container
-{
-    text-align:center;
-}
-
-#bloc1, #bloc2
-{
-    display: inline;
+    text-align: center;
 }
 
 #sabre, #flyline
@@ -20,11 +10,6 @@
     vertical-align: top;
 }
 
-.farecontainer {
-    border: none;
-    width: 200px;
-}
-
 .fare {
     margin: 3px;
     padding: 0px;
@@ -33,5 +18,14 @@
     border-color: black;
     background-color: white;
     text-align: left;
+    font-family: monospace;
+}
+
+.fare-header {
+    margin: 3px;
+    padding: 0px;
+    border: none;
+    background-color: white;
+    text-align: center;
     font-family: monospace;
 }
