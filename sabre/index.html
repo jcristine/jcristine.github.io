@@ -27,13 +27,18 @@
             function appendData(data) {
                 var mainContainer = document.getElementById("myData");
 
-                console.log(data.groupedItineraryResponse.messages.length);
+                //console.log(data.groupedItineraryResponse.messages.length);
 
-                
+                // https://www.w3schools.com/jsref/jsref_foreach.asp
+                // data.groupedItineraryResponse.messages.forEach(element => {
+                //     var div = document.createElement("div");
+                //     div.innerHTML =  element.type + ': ' + element.text;
+                //     mainContainer.appendChild(div);
+                // });
 
-                data.groupedItineraryResponse.messages.forEach(element => {
+                data.groupedItineraryResponse.itineraryGroups.forEach(element => {
                     var div = document.createElement("div");
-                    div.innerHTML =  element.type + ': ' + element.text;
+                    div.innerHTML =  element.groupDescription.legDescriptions[0].departureLocation + '-' + element.groupDescription.legDescriptions[0].arrivalLocation;
                     mainContainer.appendChild(div);
                 });
 
