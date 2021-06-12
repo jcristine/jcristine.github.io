@@ -9,7 +9,8 @@
     <body>
         <div id="myData"></div>
         <script>
-            fetch('people.json')
+
+            fetch('bfm.json')
                 .then(function (response) {
                     return response.json();
                 })
@@ -19,14 +20,19 @@
                 .catch(function (err) {
                     console.log('error: ' + err);
                 });
+
             function appendData(data) {
                 var mainContainer = document.getElementById("myData");
+
+                console.log(data.length);
+
                 for (var i = 0; i < data.length; i++) {
                     var div = document.createElement("div");
                     div.innerHTML = 'Name: ' + data[i].firstName + ' ' + data[i].lastName;
                     mainContainer.appendChild(div);
                 }
             }
+
         </script>
     </body>
 </html>
