@@ -17,36 +17,47 @@ function render() {
 
 function appendData(data) {
 
-    var mainContainer = document.getElementById("myData");
+    var sabre = document.getElementById("sabre");
 
     data.groupedItineraryResponse.itineraryGroups.forEach(group => {
 
         group.itineraries.forEach(itinerary => {
 
+            var div = document.createElement("div");
+            div.classList.add('fare');
+            div.innerHTML = itinerary.pricingInformation[0].fare.totalFare.totalPrice.toFixed(2) + '<br />';
+            sabre.appendChild(div);
+
             itinerary.legs.forEach(leg => {
 
                 data.groupedItineraryResponse.legDescs[leg.ref - 1].schedules.forEach(schedule => {
 
-                    var div = document.createElement("div");
+                    //var div = document.createElement("div");
 
-                    div.innerHTML = 
+                    div.innerHTML +=
                         data.groupedItineraryResponse.scheduleDescs[schedule.ref - 1].departure.airport + '-' +
                         data.groupedItineraryResponse.scheduleDescs[schedule.ref - 1].arrival.airport + ' ' +
                         data.groupedItineraryResponse.scheduleDescs[schedule.ref - 1].carrier.operating + ' ' +
-                        data.groupedItineraryResponse.scheduleDescs[schedule.ref - 1].carrier.operatingFlightNumber;
+                        data.groupedItineraryResponse.scheduleDescs[schedule.ref - 1].carrier.operatingFlightNumber + '<br />';
 
-                    mainContainer.appendChild(div);
+                    sabre.appendChild(div);
                     
                 });
 
             });
 
-            var div = document.createElement("div");
-            div.innerHTML = '\n';
-            mainContainer.appendChild(div);
+            //var div = document.createElement("div");
+            //div.innerHTML += '\n';
+            sabre.appendChild(div);
 
         });
 
     });
+
+    var flyline = document.getElementById("flyline");
+    var div = document.createElement("div");
+    div.classList.add('fare');
+    div.innerHTML = 'TEST'
+    flyline.appendChild(div);
 
 }
