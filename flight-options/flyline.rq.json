@@ -1,0 +1,27 @@
+{
+    "slices": [
+        {
+            "departure": {
+                "code": "JFK",
+                "date": "2021-07-10"
+            },
+            "arrival": {
+                "code": "LAX"
+            }
+        },
+        {
+            "departure": {
+                "code": "LAX",
+                "date": "2021-07-14"
+            },
+            "arrival": {
+                "code": "JFK"
+            }
+        }
+    ],
+    "passengers": [
+        {
+            "age": 27
+        }
+    ]
+}

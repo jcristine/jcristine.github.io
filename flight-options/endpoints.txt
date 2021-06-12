@@ -1,0 +1,3 @@
+https://api.flyline.io/api/flights/shop/
+
+https://api.havail.sabre.com/v2/offers/shop
