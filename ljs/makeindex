@@ -7,6 +7,9 @@ rs = requests.get("https://g1.ipcamlive.com/player/player.php?alias=603d26c2977c
 address  = re.search(r"address = '(.*?)';", rs).group(1)
 stream = re.search(r"streamid = '(.*?)';", rs).group(1)
 
+print(address)
+print(stream)
+
 url = f"{address}streams/{stream}/stream.m3u8"
 
 
