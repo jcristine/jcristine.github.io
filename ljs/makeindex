@@ -5,12 +5,12 @@ import requests, re, datetime
 rs = requests.get("https://g1.ipcamlive.com/player/player.php?alias=603d26c2977cf").content.decode()
 
 address  = re.search(r"address = '(.*?)';", rs).group(1)
-stream = re.search(r"streamid = '(.*?)';", rs).group(1)
+stream   = re.search(r"streamid = '(.*?)';", rs).group(1)
+url      = f"{address}streams/{stream}/stream.m3u8"
 
-print(address)
-print(stream)
-
-url = f"{address}streams/{stream}/stream.m3u8"
+print(f"address=[{address}]")
+print(f" stream=[{stream}]")
+print(f"    url=[{url}]")
 
 
 # https://s57.ipcamlive.com/streams/39j6wvps1mtj32ygy/stream.m3u8
