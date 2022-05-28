@@ -2,9 +2,10 @@
 
 import requests, re, datetime
 
+# curl             https://g1.ipcamlive.com/player/player.php?alias=603d26c2977cf > player-php.html
 rs = requests.get("https://g1.ipcamlive.com/player/player.php?alias=603d26c2977cf").content.decode()
 
-address  = re.search(r"address = '(.*?)';", rs).group(1)
+address  = re.search(r"address = '(.*?)';", rs).group(1).replace('g1.', 's53.')
 stream   = re.search(r"streamid = '(.*?)';", rs).group(1)
 url      = f"{address}streams/{stream}/stream.m3u8"
 
