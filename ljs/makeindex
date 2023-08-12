@@ -5,7 +5,7 @@ import requests, re, datetime
 # curl             https://g1.ipcamlive.com/player/player.php?alias=603d26c2977cf > player-php.html
 rs = requests.get("https://g1.ipcamlive.com/player/player.php?alias=603d26c2977cf").content.decode()
 
-address  = re.search(r"address = '(.*?)';", rs).group(1).replace('g1.', 's85.')
+address  = re.search(r"address = '(.*?)';", rs).group(1).replace('g1.', 's36.')
 stream   = re.search(r"streamid = '(.*?)';", rs).group(1)
 url      = f"{address}streams/{stream}/stream.m3u8"
 
@@ -18,8 +18,6 @@ print()
 # https://s36.ipcamlive.com/streams/24avzszcuj2vyefxh/stream.m3u8
 # https://s57.ipcamlive.com/streams/39j6wvps1mtj32ygy/stream.m3u8
 # https://s57.ipcamlive.com/streams/392angfkqibw8ds43/stream.m3u8
-# http://s57.ipcamlive.com/streams//stream.m3u8
-
 
 with open("template-index.html") as f: 
     template = f.read()
