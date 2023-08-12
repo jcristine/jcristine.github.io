@@ -15,6 +15,7 @@ print(f" stream=[{stream}]")
 print(f"    url=[{url}]")
 print()
 
+# https://s36.ipcamlive.com/streams/24avzszcuj2vyefxh/stream.m3u8
 # https://s57.ipcamlive.com/streams/39j6wvps1mtj32ygy/stream.m3u8
 # https://s57.ipcamlive.com/streams/392angfkqibw8ds43/stream.m3u8
 # http://s57.ipcamlive.com/streams//stream.m3u8
