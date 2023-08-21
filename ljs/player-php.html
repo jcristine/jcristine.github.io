@@ -7,7 +7,7 @@
         <link rel="shortcut icon" href="../tpls2/img/ipcamlive_favicon_128.png">
 
         <script type="text/javascript" src="jquery-3.min.js"> </script>
-		<script type="text/javascript" src="ipcamliveplayer.min.js?version=4"> </script>
+		<script type="text/javascript" src="ipcamliveplayer.min.js?version=7"> </script>
 			
 		<script type="text/javascript">
 			function inIframe () {
@@ -24,9 +24,9 @@
 			var alias = '603d26c2977cf';
 			var servicetype = 'P';
 			var available = 1;
-			var address = 'http://s53.ipcamlive.com/';
-			var streamid = '35xblrvuh9clbdo0g';
-			var token = 'pVVWMnNuqOrVVtRPrcSKaA15ChLyGqhC3e5Bq2kT4xQ=';
+			var address = 'http://s63.ipcamlive.com/';
+			var streamid = '3fludzqvxn78vcbmh';
+			var token = 'u/zSoOu7GLZVNIKuKAA/k7anSOtjZx0RCtjPdAbijOU=';
 
 			var logoenabled = 0;
 			var logofilename = 'ipcamlive.png';
@@ -35,7 +35,7 @@
 			var domainlockenabled  = 0;
 
 			var websocketenabled = 0;
-			var websocketport = '6040';
+			var websocketport = '6073';
 
 			var rtcsupport = 1;
 
@@ -56,10 +56,18 @@
 
 				var params = {};
 				params["iframemode"] = 1;
+				
 				params["audioenabled"] = 0;
 				params["timelapseenabledoncamera"] = 0;
 				params["timeshiftenabled"] = 0;		
-				params["storageenabled"] = 0;		
+				params["storageenabledoncamera"] = 0;	
+				
+				params["navigationenabled"] = 0;
+				params["navigationdata"] = '';
+				params["disablenavigation"] = 0;
+				params["adsenabled"] = 0;
+				params["adsurl"] = '';
+				
 				params["skin"] = '';		
 				params["pm"] = '1';	
 								if (logoenabled) {
