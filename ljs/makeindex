@@ -9,6 +9,8 @@ address  = re.search(r"var address = '(.*?)';", rs).group(1) # .replace('g1.', '
 stream   = re.search(r"streamid = '(.*?)';", rs).group(1)
 url      = f"{address}streams/{stream}/stream.m3u8"
 
+url      = url.replace("http", "https")
+
 print()
 print(f"address=[{address}]")
 print(f" stream=[{stream}]")
